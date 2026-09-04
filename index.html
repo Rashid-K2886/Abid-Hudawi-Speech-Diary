@@ -273,7 +273,7 @@
 </div>
 
 <script>
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyJuhy_7P2zwg7PjKEGrN6rFa5DbVP6TLqVqDHHc5Jf2HXWlrL0S75Q6_xHaBSlNrEB/exec';
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwOPdZXolr4E-4YrvhEt9zq5lFM-_PZVrIEl-c5lnBbQEyuFoKRWz8jC0sZ0kgCkwk/exec';
 
     let currentDate = new Date();
     let events = JSON.parse(localStorage.getItem('speechEvents')) || [];
@@ -346,7 +346,7 @@
         events.sort((a, b) => new Date(`${a.date}T${a.time24}`) - new Date(`${b.date}T${b.time24}`));
         localStorage.setItem('speechEvents', JSON.stringify(events));
 
-        if (SCRIPT_URL !== 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
+        if (SCRIPT_URL !== 'https://script.google.com/macros/s/AKfycbwOPdZXolr4E-4YrvhEt9zq5lFM-_PZVrIEl-c5lnBbQEyuFoKRWz8jC0sZ0kgCkwk/exec') {
             fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify(eventData) });
         }
 
